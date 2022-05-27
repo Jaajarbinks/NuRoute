@@ -5,8 +5,8 @@ Tired of running the same route? Run a new rout with Nu Route.# NuRoute
 Made with HTML, CSS, Javascript, Jquery, and Material UI as a framework. 
 
 # API's
-google.elevation
-google.distance matrix
+google.elevation <br>
+google.distance matrix<br>
 google.maps
 
 Calories Burned API? Codeninja
