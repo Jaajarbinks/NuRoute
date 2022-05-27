@@ -1,3 +1,14 @@
+//APIS here
+
+
+// 
+
+
+
+
+
+
+
 //Modal 
 class BulmaModal {
 	constructor(selector) {
@@ -42,7 +53,7 @@ class BulmaModal {
 		this.elem.addEventListener(event, callback)
 	}
 }
-var btn = document.querySelector("#btn")
+var btn = document.querySelector("#btn1")
 var mdl = new BulmaModal("#myModal")
 
 btn.addEventListener("click", function () {
