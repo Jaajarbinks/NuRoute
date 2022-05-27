@@ -11,20 +11,14 @@
     <title>NuRoute</title>
 </head>
 <header> 
+
     <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
           <div class="navbar-start">
             <div class="navbar-item">
               <div class="buttons">
                   
                 <a class="button is-primary">
-                  <strong>Start</strong>
+                  <strong>Home</strong>
                 </a>
                 <a class="button is-light">
                   About
@@ -40,23 +34,38 @@
 </header>
 <body>
 
+    <section class="about">
+        <h2 class="is-header">About</h2>
+        <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vitae quidem exercitationem reiciendis illo molestiae dolor aliquid. Perferendis ipsa sed quidem nobis, aperiam, architecto molestias laboriosam magni, error dolores tempore veniam.
+            Quae officia quasi obcaecati accusantium maxime qui mollitia harum esse odit commodi aperiam quis corrupti voluptatem, quod, sed aspernatur ad? Excepturi, accusamus. Officia maiores pariatur consequatur odit? Necessitatibus, sed est.
+            Aliquam nesciunt vero cumque sit veritatis rem provident rerum reprehenderit et ex laudantium modi dignissimos, odit pariatur voluptates recusandae non! Repudiandae numquam accusamus voluptatibus adipisci et. Ab nam impedit eveniet!
+            Suscipit quia natus sit, autem hic ad explicabo excepturi ea eaque! Dolorum nesciunt tempora at? Neque blanditiis, saepe tempora perferendis nemo quae pariatur hic vel! Aliquid blanditiis doloremque in magni.
+            Fugiat aperiam, dolorum quaerat reiciendis laborum ducimus at aliquam necessitatibus? Earum mollitia est minus! Eum, dolorum saepe libero rerum voluptates inventore! Iste, molestias ipsa rerum aperiam consequuntur omnis aliquid. Voluptas.
 
-    <div class="modal">
+        </p>
+
+    </section>
+
+
+    <div class="modal" id="myModal">
         <div class="modal-background"></div>
         <div class="modal-card">
           <header class="modal-card-head">
             <p class="modal-card-title">Modal title</p>
-            <button class="delete" aria-label="close"></button>
+            <button class="delete" aria-label="close" data-bulma-modal="close"></button>
           </header>
           <section class="modal-card-body">
-            <!-- Content ... -->
+            <p>There is something here</p>
           </section>
           <footer class="modal-card-foot">
             <button class="button is-success">Save changes</button>
-            <button class="button">Cancel</button>
+            <button class="button" data-bulma-modal="close">Cancel</button>
           </footer>
         </div>
       </div>
+      
+      <button id="btn">Click to Open Modal</button>
 
     
     
