@@ -1,6 +1,4 @@
 *{
-background-image: url("https://2madeira.com/wp-content/uploads/Ribeiro-Frio-2-Trail-Running.jpg");
-
 margin: 0;
 padding: 0;
 font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
@@ -8,14 +6,14 @@ color: black
 }
 
 body {
-    
+    background-image: url("https://2madeira.com/wp-content/uploads/Ribeiro-Frio-2-Trail-Running.jpg");
+   background-repeat: repeat-x;
 }
 
 footer{
     display:flex;
     position:fixed;
     left: 500px;
-    
 }
 
 .modal-btn{
