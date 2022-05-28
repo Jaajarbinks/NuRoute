@@ -12,4 +12,6 @@ google.maps
 Calories Burned API? Codeninja
 Motivational Qtoe API? Zenquotes
 
-# 
+# Deployed
+
+https://itsmejustino.github.io/NuRoute/
