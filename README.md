@@ -1,5 +1,5 @@
 # NuRoute
-Tired of running the same route? Run a new rout with Nu Route.# NuRoute
+Tired of running the same route? Run a new rout with Nu Route.
 
 # Technologies
 Made with HTML, CSS, Javascript, Jquery, and Bulma as a framework. 
