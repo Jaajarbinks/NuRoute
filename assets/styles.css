@@ -7,19 +7,20 @@ color: black
 
 body {
     background-image: url("https://2madeira.com/wp-content/uploads/Ribeiro-Frio-2-Trail-Running.jpg");
-   background-repeat: repeat-x;
-}
-
-footer{
-    display:flex;
-    position:fixed;
-    left: 500px;
+   background-repeat: repeat;
 }
 
 .modal-btn{
-    margin-top: 150px;
+margin-top: 150px;
 display:flex;
 justify-content:center;
 align-items:center;
 }
 
+footer{
+    display:flex
+    background-color: brown;
+    bottom:0;
+    position:fixed;
+    left: 550px;
+}
