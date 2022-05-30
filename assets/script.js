@@ -1,7 +1,4 @@
-//APIS here
-let googleAPIKEY = "";
-let fitnessCalcAPIKEY="";
-// Moment
+
 
 //main page Modal
 class BulmaModal {
@@ -48,8 +45,11 @@ class BulmaModal {
     this.elem.addEventListener(event, callback);
   }
 }
-var btn = document.querySelector("#btn1");
+var nextPagebtn = document.getElementById("btn1");
 var mdl = new BulmaModal("#myModal");
+nextPagebtn.onclick = function () {
+  location.src = "./pages/map.html";
+};
 
 btn.addEventListener("click", function () {
   mdl.show();
