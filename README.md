@@ -10,7 +10,7 @@ google.distance matrix<br>
 google.maps
 
 Calories Burned API? Codeninja
-Motivational Qtoe API? Zenquotes
+Motivational Quote API? Zenquotes
 
 # Deployed
 
