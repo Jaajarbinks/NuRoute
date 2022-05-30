@@ -45,13 +45,14 @@ class BulmaModal {
     this.elem.addEventListener(event, callback);
   }
 }
-var nextPagebtn = document.getElementById("btn1");
+var beginJourneyBtn = document.getElementById("btn1");
 var mdl = new BulmaModal("#myModal");
-nextPagebtn.onclick = function () {
-  location.src = "./pages/map.html";
-};
+let continueBtn = document.getElementById("start-btn")
+continueBtn.onclick = function () {
+  window.open("./pages/map.html",  "_blank")
+ };
 
-btn.addEventListener("click", function () {
+beginJourneyBtn.addEventListener("click", function () {
   mdl.show();
 });
 
