@@ -1,26 +1,40 @@
-*{
-margin: 0;
-padding: 0;
-font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-color: black
+* {
+  margin: 0;
+  padding: 0;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  color: black;
 }
 
 body {
-    background-image: url("https://2madeira.com/wp-content/uploads/Ribeiro-Frio-2-Trail-Running.jpg");
-   background-repeat: repeat;
+  display: block;
+  background: url("https://2madeira.com/wp-content/uploads/Ribeiro-Frio-2-Trail-Running.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  max-width: 100%;
+  width: 100%;
 }
 
-.modal-btn{
-margin-top: 150px;
-display:flex;
-justify-content:center;
-align-items:center;
+.modal-btn {
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-footer{
-    display:flex
-    background-color: brown;
-    bottom:0;
-    position:fixed;
-    left: 550px;
+.copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  background: #eee;
+  border: 1px solid #ddd;
+}
+
+#btn1{
+margin-bottom: 50px;
 }
