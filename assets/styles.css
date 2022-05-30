@@ -5,7 +5,7 @@
   color: black;
 }
 
-body {
+.picture {
   display: block;
   background: url("https://2madeira.com/wp-content/uploads/Ribeiro-Frio-2-Trail-Running.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
