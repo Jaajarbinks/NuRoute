@@ -63,3 +63,22 @@ mdl.addEventListener("modal:show", function () {
 mdl.addEventListener("modal:close", function () {
   console.log("closed");
 });
+
+//modal control for the contact button in nav bar
+var contactBtn = document.getElementById("contact-btn");
+var contactMdl = new BulmaModal('#contact-mdl');
+let submitBtn = document.getElementById("#submit-btn");
+
+contactBtn.addEventListener("click", function () {
+  contactMdl.show();
+})
+
+//modal for the developer button in nav bar
+var developerBtn = document.getElementById("#dev-btn");
+var devMdl = new BulmaModal('#modal-dev');
+
+developerBtn.addEventListener("click", function () {
+  devMdl.show();
+})
+
+
