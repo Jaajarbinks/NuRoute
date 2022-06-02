@@ -23,8 +23,60 @@
                 <a class="button is-light">
                   About
                 </a>
-                <a class="button is-light">
+                <a href="https://github.com/itsmejustino/NuRoute" class="button is-light">
+                  Github
+                </a>
+                <a class="button is-light" id="dev-btn">
+                  Developers
+                  <div class="modal" id="modal-dev">
+                    <div class="modal-background"></div>
+                    <div class="modal-card">
+                      <header class="modal-card-head">
+                        <p class="modal-card-title">Modal title</p>
+                        <button class="delete" aria-label="close"></button>
+                      </header>
+                      <section class="modal-card-body">
+                        <!-- Content ... -->
+                      </section>
+                      <footer class="modal-card-foot">
+                        <button class="button">Cancel</button>
+                      </footer>
+                    </div>
+                  </div>
+                </a>
+                <a class="button is-light" id="contact-btn">
                     Contact
+                    <div class="modal" id="contact-mdl">
+                      <div class="modal-background"></div>
+                      <div class="modal-card">
+                        <header class="modal-card-head">
+                          <p class="modal-card-tittle text-center">Submit Name and Email to contact us</p>
+                          <button class="delete" aria-label="close"></button>
+                            </header>
+                            <section class="modal-card-body">
+                              <div class="field">
+                                <label class="label">Name</label>
+                                <div class="control">
+                                  <input class="input" type="text" placeholder="e.g Alex Smith">
+                                </div>
+                              </div>
+                              
+                              <div class="field">
+                                <label class="label">Email</label>
+                                <div class="control">
+                                  <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+                                </div>
+                              </div>
+                             
+                            </section>
+                            <div>
+                            <footer class="modal-card-foot">
+                              <button class="button is-success" id="submit-btn" >Submit</button>
+                              <button class="button" data-bulma-modal="close">Cancel</button>
+                            </footer>
+                          </div>
+                          </div>
+
                   </a>
               </div>
             </div>
@@ -33,29 +85,29 @@
       </nav>
 </header>
 <body>
- 
-    <div class="block">
-       <section class="hero">
-         <div class="hero-body">
-           <div class="container">
-              <h2 class="title is-dark">About</h2>
-  
-                <p>
-                 Running is a great way to exercise. It is arguably the most popular way to exercise and can also be monotonous and repetitive. Not to worry! NuRoute is here to make
-                 running more exciting by randomizing your running route. A new route allows for a more enjoyable running experience 
-                 because it allows for new scenery and running grades. Not to mention this takes the thought out of "where would I like to run today?" 
-                 This app guarantees that you wont run the same route the next time, or the time after that! What are you waiting for? Get out there and
-                 run with NuRoute!
 
-                </p>
-            </div>
-          </div>
-      </section>
-    </div>
-    <div class="modal" id="myModal">
-        <div class="modal-background"></div>
-        <div class="modal-card">
-          <header class="modal-card-head">
+  <div class="block">
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container">
+          <h2 class="title is-dark">About</h2>
+          
+          <p>
+            Running is a great way to exercise. It is arguably the most popular way to exercise and can also be monotonous and repetitive. Not to worry! NuRoute is here to make
+            running more exciting by randomizing your running route. A new route allows for a more enjoyable running experience 
+            because it allows for new scenery and running grades. Not to mention this takes the thought out of "where would I like to run today?" 
+            This app guarantees that you wont run the same route the next time, or the time after that! What are you waiting for? Get out there and
+            run with NuRoute!
+            
+          </p>
+        </div>
+      </div>
+    </section>
+  </div>
+  <div class="modal" id="myModal">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
             <p class="modal-card-title">NuRoute: Lets Run!</p>
             <button class="delete" aria-label="close" data-bulma-modal="close"></button>
           </header>
