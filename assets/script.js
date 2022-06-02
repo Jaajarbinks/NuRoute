@@ -16,7 +16,7 @@ fetch("https://type.fit/api/quotes")
 setInterval(function() {
     i = Math.floor(Math.random() * 1643) + 1;
     document.getElementById("quote-text").innerHTML = '"' + data[i].text + '"';
-    document.getElementById("author").innerHTML = "-" + data[i].author;
+    document.getElementById("author").innerHTML = "- " + data[i].author;
   }, 20000);
     console.log(data);
   });
