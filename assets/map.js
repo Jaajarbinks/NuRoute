@@ -42,8 +42,8 @@ function initMap() {
   //getRunLength is the length that will be between given start point and randomly generated end point.
   let getRunLength = document.getElementById("length-input")
   autocomplete.addListener('place_changed', function () {
-    marker.setVisible(false);
-    markerTwo.setVisible(false);
+    marker.setVisible(true);
+    markerTwo.setVisible(true);
     const place = autocomplete.getPlace();
     if (!place.geometry) {
       // User entered the name of a Place that was not suggested and
@@ -89,9 +89,34 @@ function initMap() {
     markerTwo.setPosition(place.geometry.location);
     marker.setVisible(true);
     console.log(getRunLength.value);
-    console.log(place.geometry.location)
+    console.log(place.geometry);
+    //marker of searched location with lat lon values
+    console.log(place.geometry.viewport.Ab);
+    console.log(place.geometry.viewport.Ua);
+    //get markerTwo lat long value can set position with setPosition(x,y,z)
+    console.log(markerTwo.getPosition().lat())
+    console.log(markerTwo.getPosition().lng())
     
   }
+
+	
+// first. randomize coordinates. test coordinates are within given user param. 
+//if coordinates are .5 miles of given range then compute
+
+  // const R = 6371e3; // metres
+  // const φ1 = lat1 * Math.PI/180; // φ, λ in radians
+  // const φ2 = lat2 * Math.PI/180;
+  // const Δφ = (lat2-lat1) * Math.PI/180;
+  // const Δλ = (lon2-lon1) * Math.PI/180;
+  
+  // const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+  //           Math.cos(φ1) * Math.cos(φ2) *
+  //           Math.sin(Δλ/2) * Math.sin(Δλ/2);
+  // const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+  
+  // const d = R * c;
+
+
 }
 
 // let lat = place.geometry.location.
@@ -99,101 +124,6 @@ function initMap() {
 
 
 // }
-
-
-
-
-// init_lat = 42.99;
-// init_lon = -71.48;
-// range = .02;
-// trackPoints = [];
-
-// var start;
-// var randCoord;
-// var lat_long;
-
-// function findCoordinates(lat, long, range)
-// {
-    // How many points do we want? (should probably be function param..)
-    // var numberOfPoints = 3;
-    // var degreesPerPoint = 360 / numberOfPoints;
-
-    // Keep track of the angle from centre to radius
-    // var currentAngle = 0;
-
-    // The points on the radius will be lat+x2, long+y2
-    // var x2;
-    // var y2;
-    // Track the points we generate to return at the end
-
-    // for(let i=0; i < numberOfPoints; i++)
-    // {
-        // X2 point will be cosine of angle * radius (range)
-        // x2 = Math.cos(currentAngle) * range;
-        // Y2 point will be sin * range
-        // y2 = Math.sin(currentAngle) * range;
-
-        // Assuming here you're using points for each x,y..             
-        // newLat = lat+x2;
-        // newLong = long+y2;
-        // lat_long = new google.maps.LatLng(newLat,newLong);          
-        // trackPoints[i] = lat_long;  
-
-
-        // Shift our angle around for the next point
-    //     currentAngle += degreesPerPoint;
-    // }
-    // Return the points we've generated
-    //gets random coordinate from our array of coords
-  
-    // randCoord = trackPoints[Math.floor(Math.random() * trackPoints.length)];
-    /*
-    document.getElementById('randCoord').innerHTML = randCoord;
-    document.getElementById('points').innerHTML = trackPoints;
-    */
-// }
-
-// var directionsDisplay;
-// var directionsService = new google.maps.DirectionsService();
-
-// function initialize() {
-//   directionsDisplay = new google.maps.DirectionsRenderer();
-//   var mapOptions = {
-//     zoom: 12,
-//     center: new google.maps.LatLng(42.99, -71.48)
-//   };
-//   var map = new google.maps.Map(document.getElementById('map-canvas'),
-//       mapOptions);
-//   directionsDisplay.setMap(map);
-// }
-
-function calcRoute() {
-  //Fires up random coordinate generation based upon distance input
-  findCoordinates(init_lat,init_lon,range);  
-  //Displays start and chosen random coordinate - for debugging only
-  document.getElementById('buttonClick').innerHTML = lat_long + randCoord;  
-  //Get's value from doc to use for start value
-  //var start = document.getElementById('start').value;
-
-  var request = {
-      origin:lat_long,
-      destination:randCoord,
-      travelMode: google.maps.TravelMode.DRIVING
-  };  
-
-  directionsService.route(request, function(response, status) {
-    if (status == google.maps.DirectionsStatus.OK) {
-      directionsDisplay.setDirections(response);
-    } else {
-      alert('You broke it.');
-   } 
-  });
-}
-
-
-// google.maps.event.addDomListener(window, 'load', initialize);
-
-
 
 // --------Moment Timer. Start/Stop/Reset Timer.-----------
 var beginButton = document.querySelector('#start')
