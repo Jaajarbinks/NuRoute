@@ -92,8 +92,28 @@ function initMap() {
     
   }
 }
+var beginButton = document.querySelector('#start')
+var stopButton = document.querySelector('#stop')
 
 
+
+function startTimer()
+{
+  var timer = moment().startOf("day");
+    var r = setInterval(function() {
+      timer.add(1,'second');
+      document.querySelector('#clock').innerHTML = timer.format('HH:mm:ss');
+        
+    }, 1000);
+   
+    stopButton.addEventListener('click', function(){
+      clearInterval(r); 
+    }) 
+} 
+
+beginButton.addEventListener('click', function(){
+  startTimer()
+})
 
 
 
