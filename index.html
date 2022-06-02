@@ -12,25 +12,77 @@
 </head>
 <header> 
 
-    <nav class="navbar" role="navigation" aria-label="main navigation">
-          <div class="navbar-start">
-            <div class="navbar-item">
-              <div class="buttons">
-                  
-                <a class="button is-primary">
-                  <strong>Home</strong>
-                </a>
-                <a class="button is-light">
-                  About
-                </a>
-                <a class="button is-light">
-                    Contact
-                  </a>
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-start">
+      <div class="navbar-item">
+        <div class="buttons">
+            
+          <a class="button is-primary">
+            <strong>Home</strong>
+          </a>
+          <a class="button is-light">
+            About
+          </a>
+          <a href="https://github.com/itsmejustino/NuRoute" class="button is-light">
+            Github
+          </a>
+          <a class="button is-light" id="dev-btn">
+            Developers
+            <div class="modal" id="modal-dev">
+              <div class="modal-background"></div>
+              <div class="modal-card">
+                <header class="modal-card-head">
+                  <p class="modal-card-title">Modal title</p>
+                  <button class="delete" aria-label="close"></button>
+                </header>
+                <section class="modal-card-body">
+                  <!-- Content ... -->
+                </section>
+                <footer class="modal-card-foot">
+                  <button class="button">Cancel</button>
+                </footer>
               </div>
             </div>
-          </div>
+          </a>
+          <a class="button is-light" id="contact-btn">
+              Contact
+              <div class="modal" id="contact-mdl">
+                <div class="modal-background"></div>
+                <div class="modal-card">
+                  <header class="modal-card-head">
+                    <p class="modal-card-tittle text-center">Submit Name and Email to contact us</p>
+                    <button class="delete" aria-label="close"></button>
+                      </header>
+                      <section class="modal-card-body">
+                        <div class="field">
+                          <label class="label">Name</label>
+                          <div class="control">
+                            <input class="input" type="text" placeholder="e.g Alex Smith">
+                          </div>
+                        </div>
+                        
+                        <div class="field">
+                          <label class="label">Email</label>
+                          <div class="control">
+                            <input class="input" type="email" placeholder="e.g. alexsmith@gmail.com">
+                          </div>
+                        </div>
+                       
+                      </section>
+                      <div>
+                      <footer class="modal-card-foot">
+                        <button class="button is-success" id="submit-btn" >Submit</button>
+                        <button class="button" data-bulma-modal="close">Cancel</button>
+                      </footer>
+                    </div>
+                    </div>
+
+            </a>
         </div>
-      </nav>
+      </div>
+    </div>
+  </div>
+</nav>
 </header>
 <body>
  
