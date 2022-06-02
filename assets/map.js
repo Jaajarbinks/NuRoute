@@ -1,7 +1,9 @@
 //APIS here
 let googleAPIKEY = "AIzaSyDClUF1y_PFdn5iZkZs42H6IfXp2_dAEWI";
 let fitnessCalcAPIKEY = "";
-// Moment
+
+
+
 
 //Map
 
@@ -96,6 +98,11 @@ function initMap() {
     
   }
 }
+
+
+
+
+
 
 
 //// ------------------random route code---------------

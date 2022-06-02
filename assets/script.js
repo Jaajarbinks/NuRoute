@@ -1,4 +1,27 @@
 
+let quoteArea = document.getElementById('quotes-area');
+// let quoteText = document.getElementById("quote-text")
+
+// var zenUrl = 'https://zenquotes.io/api/quotes';
+
+fetch("https://type.fit/api/quotes")
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    let i;
+setInterval(function() {
+    i = Math.floor(Math.random() * 1643) + 1;
+    document.getElementById("quote-text").innerHTML = data[i].text;
+    document.getElementById("author").innerHTML = data [i].author;
+  }, 2000);
+    console.log(data);
+ 
+
+
+  });
+
+
 
 //main page Modal
 class BulmaModal {
