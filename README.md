@@ -35,7 +35,7 @@ Motivational Quote API? Zenquotes
 ## Api modal map
 
 This is our map api that was put into webpage
-![mapapi](assets%5Cmapfeatures.png](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/mapfeatures.png)
+![mapapi](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/mapfeatures.png)
 
 ## Deployed
 
