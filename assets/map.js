@@ -94,6 +94,7 @@ function initMap() {
 }
 var beginButton = document.querySelector('#start')
 var stopButton = document.querySelector('#stop')
+var resetButton = document.querySelector('#reset')
 var timer = moment().startOf("day");
 
 
@@ -105,14 +106,19 @@ function startTimer()
       document.querySelector('#clock').innerHTML = timer.format('HH:mm:ss');
         
     }, 1000);
-   
+    resetButton.addEventListener('click', function(){
+      document.querySelector('#clock').innerHTML = timer.set({ hour: 0, minute: 0, second: 0, millisecond: 0, });
+      document.querySelector('#clock').innerHTML = "00:00:00";
+    });
     stopButton.addEventListener('click', function(){
-      clearInterval(r); 
-    }) 
+      clearInterval(r);
+     
+    }) ;
+   
 } 
 
 beginButton.addEventListener('click', function(){
-  startTimer()
+  startTimer(timer);
 })
 
 
