@@ -94,62 +94,54 @@ function initMap() {
 }
 
 
+// --------Moment Timer. Start/Stop/Reset Timer.-----------
+var beginButton = document.querySelector('#start')
+var stopButton = document.querySelector('#stop')
+var resetButton = document.querySelector('#reset')
+var saveButton = document.querySelector('#save')
+var timer = moment().startOf("day");
+
+
+startTimer = () =>
+{
+  
+    var r = setInterval(() => {
+      timer.add(1,'second');
+      document.querySelector('#clock').innerHTML = timer.format('HH:mm:ss');
+        
+    }, 1000);
+    //.set will access a new object and reset the values in that object to "0" 
+    resetButton.addEventListener('click', () => {
+      document.querySelector('#clock').innerHTML = timer.set({ hour: 0, minute: 0, second: 0, millisecond: 0, });
+      //****try commenting out line 116 to see its original return.*******
+      document.querySelector('#clock').innerHTML = "00:00:00";
+    });
+    stopButton.addEventListener('click', () => {
+      clearInterval(r);
+     
+    }) ;
+   
+} 
+
+saveTime = () => {
+  let time = document.querySelector('#clock').innerHTML
+  localStorage.setItem('savedTime', time ) 
+
+}
+
+saveButton.addEventListener('click', () => {
+saveTime();
+})
+
+beginButton.addEventListener('click',()=> {
+  startTimer(timer);
+})
 
 
 
 
 
-//// ------------------random route code---------------
-// function fixedPointRoute(length)
-// {
 
-//   //How far is it to your fixed point?
-//   var distToFixed = computeDistanceBetween(BaseLocation,fixedPoints[0].marker.getPosition());
-
-//   if(distToFixed/requestedLengthInMeters > 0.5)
-//     {
-//       alert("The distance requested is less than half the straight line distance to the fixed waypoint.  No way to close a route.");
-//     }
-
-//   else
-//     {
-//       var brngToFixed = getBearing(BaseLocation,fixedPoints[0].marker.getPosition());
-//       /* Now, choose a direction in which to head, and go the distance such that the sum of the 3 legs 
-// 	 (base to fixed, fixed to next, next to base) add up to the desired distance, length. */
-//       var minTurn = 20;  var maxTurn = 160;
-//       var direction = Math.random()* (maxTurn-minTurn) + minTurn;
-//       var side = Math.floor(2*Math.random());
-//       if(side==0) direction = direction;
-//       if(side==1) direction = -1* direction;
-//       var newBearing = brngToFixed + direction * Math.PI/180;
-//       var step = 0;
-//       var toHere;
-//       var allLegs = 0;
-//       while(allLegs < length)
-// 	{
-// 	  step += 1;  //Move out in steps of 1 meter.
-// 	  toHere = getNewPointAlongBearing(fixedPoints[0].marker.getPosition(),step,newBearing);
-// 	  allLegs = distToFixed + computeDistanceBetween(fixedPoints[0].marker.getPosition(),toHere) + computeDistanceBetween(toHere,BaseLocation);
-// 	}
-
-//       var newBearing2 = newBearing + (1-side*2)*5*Math.PI/180;
-//       var toHere2 = getNewPointAlongBearing(fixedPoints[0].marker.getPosition(),step,newBearing2);
-
-//       /*
-//       placeMarker(toHere,"");
-//       new google.maps.Polyline({path:[BaseLocation,fixedPoints[0].marker.getPosition()],map:map});
-//       new google.maps.Polyline({path:[fixedPoints[0].marker.getPosition(),toHere],map:map});
-//       new google.maps.Polyline({path:[toHere,BaseLocation],map:map});
-//       */
-      
-//       rlPoints.length=0;
-//       rlPoints.push(fixedPoints[0].marker.getPosition());
-//       rlPoints.push(toHere);
-//       rlPoints.push(toHere2);
-//     }
-
-//   return;
-// }
 
 
 
