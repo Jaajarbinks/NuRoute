@@ -129,7 +129,7 @@ function generateRandomLng()
   }
 // user this while loop to pass the lat, lng values to change marker position
 
-    // while(computedDistance > getRunLength.value){
+    // while(computedDistance >= getRunLength.value){
     //   let lat = generateRandomLat();
     //   let lng = generateRandomLng();
     //   generateRandomLng();
