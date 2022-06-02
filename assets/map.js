@@ -94,12 +94,12 @@ function initMap() {
 }
 var beginButton = document.querySelector('#start')
 var stopButton = document.querySelector('#stop')
-
+var timer = moment().startOf("day");
 
 
 function startTimer()
 {
-  var timer = moment().startOf("day");
+  
     var r = setInterval(function() {
       timer.add(1,'second');
       document.querySelector('#clock').innerHTML = timer.format('HH:mm:ss');
