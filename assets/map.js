@@ -98,6 +98,7 @@ function initMap() {
 var beginButton = document.querySelector('#start')
 var stopButton = document.querySelector('#stop')
 var resetButton = document.querySelector('#reset')
+var saveButton = document.querySelector('#save')
 var timer = moment().startOf("day");
 
 
@@ -121,6 +122,16 @@ startTimer = () =>
     }) ;
    
 } 
+
+saveTime = () => {
+  let time = document.querySelector('#clock').innerHTML
+  localStorage.setItem('savedTime', time ) 
+
+}
+
+saveButton.addEventListener('click', () => {
+saveTime();
+})
 
 beginButton.addEventListener('click',()=> {
   startTimer(timer);
