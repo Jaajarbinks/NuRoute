@@ -4,17 +4,20 @@ let quoteArea = document.getElementById('quotes-area');
 
 // var zenUrl = 'https://zenquotes.io/api/quotes';
 
+
 fetch("https://type.fit/api/quotes")
   .then(function(response) {
     return response.json();
   })
   .then(function(data) {
     let i;
+    document.getElementById("quote-text").innerHTML ='"' + data[1].text + '"';
+    document.getElementById("author").innerHTML = "-" + data [1].author;
 setInterval(function() {
     i = Math.floor(Math.random() * 1643) + 1;
     document.getElementById("quote-text").innerHTML = data[i].text;
     document.getElementById("author").innerHTML = data [i].author;
-  }, 2000);
+  }, 20000);
     console.log(data);
   });
 //main page Modal
@@ -81,3 +84,20 @@ mdl.addEventListener("modal:show", function () {
 mdl.addEventListener("modal:close", function () {
   console.log("closed");
 });
+
+//modal control for the contact button in nav bar
+var contactBtn = document.getElementById("contact-btn");
+var contactMdl = new BulmaModal('#contact-mdl');
+let submitBtn = document.getElementById("#submit-btn");
+
+contactBtn.addEventListener("click", function () {
+  contactMdl.show();
+})
+
+//modal for the developer button in nav bar
+var developerBtn = document.getElementById("dev-btn");
+var devMdl = new BulmaModal('#modal-dev');
+
+developerBtn.addEventListener("click", function () {
+  devMdl.show();
+})
