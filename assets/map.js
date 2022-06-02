@@ -51,7 +51,7 @@ function initMap() {
       window.alert('No details available for input: \'' + place.name + '\'');
       return;
     }
-    console.log(getRunLength.value);
+    
     renderAddress(place);
     fillInAddress(place);
   });
@@ -88,76 +88,84 @@ function initMap() {
     marker.setPosition(place.geometry.location);
     markerTwo.setPosition(place.geometry.location);
     marker.setVisible(true);
-    
+    console.log(getRunLength.value);
+    console.log(place.geometry.location)
     
   }
 }
 
-init_lat = 42.99;
-init_lon = -71.48;
-range = .02;
-trackPoints = [];
-
-var start;
-var randCoord;
-var lat_long;
-
-function findCoordinates(lat, long, range)
+// let lat = place.geometry.location.
+// randomCoord = ()=> {
 
 
-{
+// }
+
+
+
+
+// init_lat = 42.99;
+// init_lon = -71.48;
+// range = .02;
+// trackPoints = [];
+
+// var start;
+// var randCoord;
+// var lat_long;
+
+// function findCoordinates(lat, long, range)
+// {
     // How many points do we want? (should probably be function param..)
-    var numberOfPoints = 16;
-    var degreesPerPoint = 360 / numberOfPoints;
+    // var numberOfPoints = 3;
+    // var degreesPerPoint = 360 / numberOfPoints;
 
     // Keep track of the angle from centre to radius
-    var currentAngle = 0;
+    // var currentAngle = 0;
 
     // The points on the radius will be lat+x2, long+y2
-    var x2;
-    var y2;
+    // var x2;
+    // var y2;
     // Track the points we generate to return at the end
 
-    for(var i=0; i < numberOfPoints; i++)
-    {
+    // for(let i=0; i < numberOfPoints; i++)
+    // {
         // X2 point will be cosine of angle * radius (range)
-        x2 = Math.cos(currentAngle) * range;
+        // x2 = Math.cos(currentAngle) * range;
         // Y2 point will be sin * range
-        y2 = Math.sin(currentAngle) * range;
+        // y2 = Math.sin(currentAngle) * range;
 
         // Assuming here you're using points for each x,y..             
-        newLat = lat+x2;
-        newLong = long+y2;
-        lat_long = new google.maps.LatLng(newLat,newLong);          
-        trackPoints[i] = lat_long;  
+        // newLat = lat+x2;
+        // newLong = long+y2;
+        // lat_long = new google.maps.LatLng(newLat,newLong);          
+        // trackPoints[i] = lat_long;  
 
 
         // Shift our angle around for the next point
-        currentAngle += degreesPerPoint;
-    }
+    //     currentAngle += degreesPerPoint;
+    // }
     // Return the points we've generated
     //gets random coordinate from our array of coords
   
-    randCoord = trackPoints[Math.floor(Math.random() * trackPoints.length)];
+    // randCoord = trackPoints[Math.floor(Math.random() * trackPoints.length)];
     /*
     document.getElementById('randCoord').innerHTML = randCoord;
     document.getElementById('points').innerHTML = trackPoints;
     */
-}
+// }
 
-var directionsDisplay;
-var directionsService = new google.maps.DirectionsService();
+// var directionsDisplay;
+// var directionsService = new google.maps.DirectionsService();
 
-function initialize() {
-  directionsDisplay = new google.maps.DirectionsRenderer();
-  var mapOptions = {
-    zoom: 12,
-    center: new google.maps.LatLng(42.99, -71.48)
-  };
-  var map = new google.maps.Map(document.getElementById('map-canvas'),
-      mapOptions);
-  directionsDisplay.setMap(map);
-}
+// function initialize() {
+//   directionsDisplay = new google.maps.DirectionsRenderer();
+//   var mapOptions = {
+//     zoom: 12,
+//     center: new google.maps.LatLng(42.99, -71.48)
+//   };
+//   var map = new google.maps.Map(document.getElementById('map-canvas'),
+//       mapOptions);
+//   directionsDisplay.setMap(map);
+// }
 
 function calcRoute() {
   //Fires up random coordinate generation based upon distance input
@@ -183,7 +191,7 @@ function calcRoute() {
 }
 
 
-google.maps.event.addDomListener(window, 'load', initialize);
+// google.maps.event.addDomListener(window, 'load', initialize);
 
 
 
