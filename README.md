@@ -17,7 +17,7 @@ how you will be using the route.
 ## Developers page
 
 This is where we add ourself to the page.
-![Developers](assets%5Cdevelopers.png)
+![Developers](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/developers.png)
 
 ## Technologies
 
