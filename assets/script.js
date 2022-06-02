@@ -16,11 +16,7 @@ setInterval(function() {
     document.getElementById("author").innerHTML = data [i].author;
   }, 2000);
     console.log(data);
- 
-
-
   });
-  
 //main page Modal
 class BulmaModal {
   constructor(selector) {
@@ -66,6 +62,7 @@ class BulmaModal {
     this.elem.addEventListener(event, callback);
   }
 }
+
 var beginJourneyBtn = document.getElementById("btn1");
 var mdl = new BulmaModal("#myModal");
 let continueBtn = document.getElementById("start-btn")
