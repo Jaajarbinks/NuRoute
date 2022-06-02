@@ -219,6 +219,49 @@ beginButton.addEventListener('click',()=> {
   startTimer(timer);
 })
 
+// --------Moment Timer. Start/Stop/Reset Timer.-----------
+var beginButton = document.querySelector('#start')
+var stopButton = document.querySelector('#stop')
+var resetButton = document.querySelector('#reset')
+var saveButton = document.querySelector('#save')
+var timer = moment().startOf("day");
+
+
+startTimer = () =>
+{
+  
+    var r = setInterval(() => {
+      timer.add(1,'second');
+      document.querySelector('#clock').innerHTML = timer.format('HH:mm:ss');
+        
+    }, 1000);
+    //.set will access a new object and reset the values in that object to "0" 
+    resetButton.addEventListener('click', () => {
+      document.querySelector('#clock').innerHTML = timer.set({ hour: 0, minute: 0, second: 0, millisecond: 0, });
+      //****try commenting out line 116 to see its original return.*******
+      document.querySelector('#clock').innerHTML = "00:00:00";
+    });
+    stopButton.addEventListener('click', () => {
+      clearInterval(r);
+     
+    }) ;
+   
+} 
+
+saveTime = () => {
+  let time = document.querySelector('#clock').innerHTML
+  localStorage.setItem('savedTime', time ) 
+
+}
+
+saveButton.addEventListener('click', () => {
+saveTime();
+})
+
+beginButton.addEventListener('click',()=> {
+  startTimer(timer);
+})
+
 
 
 
