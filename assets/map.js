@@ -4,6 +4,8 @@ let fitnessCalcAPIKEY = "";
 // Moment
 
 //Map
+
+
 "use strict";
   
 function initMap() {
@@ -20,24 +22,32 @@ function initMap() {
     'country',
     'postal_code',
   ];
+  const directionsService = new google.maps.DirectionsService();
 
+ 
   const getFormInputElement = (component) => document.getElementById(component + '-input');
+  
   const map = new google.maps.Map(document.getElementById("gmp-map"), {
     zoom: CONFIGURATION.mapOptions.zoom,
     center: { lat: 37.4221, lng: -122.0841 },
-    mapTypeControl: false,
+    mapTypeControl: true,
     fullscreenControl: CONFIGURATION.mapOptions.fullscreenControl,
     zoomControl: CONFIGURATION.mapOptions.zoomControl,
     streetViewControl: CONFIGURATION.mapOptions.streetViewControl
   });
-  const marker = new google.maps.Marker({map: map, draggable: false});
+  console.log(google.maps)
+  const marker = new google.maps.Marker({map: map, draggable: true});
+  const markerTwo = new google.maps.Marker({map: map, draggable: true})
   const autocompleteInput = getFormInputElement('location');
   const autocomplete = new google.maps.places.Autocomplete(autocompleteInput, {
     fields: ["address_components", "geometry", "name"],
     types: ["address"],
   });
+  //getRunLength is the length that will be between given start point and randomly generated end point.
+  let getRunLength = document.getElementById("length-input")
   autocomplete.addListener('place_changed', function () {
     marker.setVisible(false);
+    markerTwo.setVisible(false);
     const place = autocomplete.getPlace();
     if (!place.geometry) {
       // User entered the name of a Place that was not suggested and
@@ -45,6 +55,7 @@ function initMap() {
       window.alert('No details available for input: \'' + place.name + '\'');
       return;
     }
+    console.log(getRunLength.value);
     renderAddress(place);
     fillInAddress(place);
   });
@@ -75,10 +86,69 @@ function initMap() {
       }
     }
   }
-
+  
   function renderAddress(place) {
     map.setCenter(place.geometry.location);
     marker.setPosition(place.geometry.location);
+    markerTwo.setPosition(place.geometry.location);
     marker.setVisible(true);
+    
+    
   }
 }
+
+
+//// ------------------random route code---------------
+// function fixedPointRoute(length)
+// {
+
+//   //How far is it to your fixed point?
+//   var distToFixed = computeDistanceBetween(BaseLocation,fixedPoints[0].marker.getPosition());
+
+//   if(distToFixed/requestedLengthInMeters > 0.5)
+//     {
+//       alert("The distance requested is less than half the straight line distance to the fixed waypoint.  No way to close a route.");
+//     }
+
+//   else
+//     {
+//       var brngToFixed = getBearing(BaseLocation,fixedPoints[0].marker.getPosition());
+//       /* Now, choose a direction in which to head, and go the distance such that the sum of the 3 legs 
+// 	 (base to fixed, fixed to next, next to base) add up to the desired distance, length. */
+//       var minTurn = 20;  var maxTurn = 160;
+//       var direction = Math.random()* (maxTurn-minTurn) + minTurn;
+//       var side = Math.floor(2*Math.random());
+//       if(side==0) direction = direction;
+//       if(side==1) direction = -1* direction;
+//       var newBearing = brngToFixed + direction * Math.PI/180;
+//       var step = 0;
+//       var toHere;
+//       var allLegs = 0;
+//       while(allLegs < length)
+// 	{
+// 	  step += 1;  //Move out in steps of 1 meter.
+// 	  toHere = getNewPointAlongBearing(fixedPoints[0].marker.getPosition(),step,newBearing);
+// 	  allLegs = distToFixed + computeDistanceBetween(fixedPoints[0].marker.getPosition(),toHere) + computeDistanceBetween(toHere,BaseLocation);
+// 	}
+
+//       var newBearing2 = newBearing + (1-side*2)*5*Math.PI/180;
+//       var toHere2 = getNewPointAlongBearing(fixedPoints[0].marker.getPosition(),step,newBearing2);
+
+//       /*
+//       placeMarker(toHere,"");
+//       new google.maps.Polyline({path:[BaseLocation,fixedPoints[0].marker.getPosition()],map:map});
+//       new google.maps.Polyline({path:[fixedPoints[0].marker.getPosition(),toHere],map:map});
+//       new google.maps.Polyline({path:[toHere,BaseLocation],map:map});
+//       */
+      
+//       rlPoints.length=0;
+//       rlPoints.push(fixedPoints[0].marker.getPosition());
+//       rlPoints.push(toHere);
+//       rlPoints.push(toHere2);
+//     }
+
+//   return;
+// }
+
+
+
