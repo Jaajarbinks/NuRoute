@@ -83,6 +83,7 @@ function initMap() {
     }
   }
   
+  ////using render address to log data of objects and test random lat lon and marker tracking
   function renderAddress(place) {
     map.setCenter(place.geometry.location);
     marker.setPosition(place.geometry.location);
@@ -94,6 +95,53 @@ function initMap() {
     console.log(place.geometry.viewport.Ab);
     console.log(place.geometry.viewport.Ua);
     //get markerTwo lat long value can set position with setPosition(x,y,z)
+    // markerTwo.setPosition(39.5287555197085,-104.7884510697085)
+    
+    //function randomly generates a lat or lng value 
+    function generateRandomLat()
+{
+    var num = Math.random()*180;
+    var latlngNum = Math.floor(Math.random());
+    if (latlngNum == 0)
+    {
+        num = num * -1;
+    }
+    return num;
+}
+function generateRandomLng()
+{
+    var num = Math.random()*180;
+    var latlngNum = Math.floor(Math.random());
+    if (latlngNum == 0)
+    {
+        num = num * -1;
+    }
+    return num;
+}
+  console.log(generateRandomLat())
+  console.log(generateRandomLng())
+  
+
+   changeMarkerPosition = (marker) => {
+     
+      var latlng = new google.maps.LatLng(39.5287555197085, -104.7884510697085);
+      marker.setPosition(latlng);
+  }
+// user this while loop to pass the lat, lng values to change marker position
+
+    // while(computedDistance > getRunLength.value){
+    //   let lat = generateRandomLat();
+    //   let lng = generateRandomLng();
+    //   generateRandomLng();
+    //   generatedRandomLat();
+    //   if(computedDistance == getRunLength.value){
+    //     lat = 
+    //       break;
+
+    //   }
+    // }
+
+  changeMarkerPosition(markerTwo);
     console.log(markerTwo.getPosition().lat())
     console.log(markerTwo.getPosition().lng())
     
@@ -101,6 +149,7 @@ function initMap() {
 
 	
 // first. randomize coordinates. test coordinates are within given user param. 
+
 //if coordinates are .5 miles of given range then compute
 
   // const R = 6371e3; // metres
