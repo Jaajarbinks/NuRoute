@@ -34,7 +34,7 @@ This is our map api that was put into webpage<br>
 Made with HTML, CSS, Javascript, Jquery, and Bulma as a framework.
 
 ## API's
-Google.maps
+Google.maps <br>
 Motivational Quote API by Type Fit Motivational Quotes
 
 
