@@ -1,6 +1,6 @@
 # NuRoute
 
-Tired of running the same route? Run a new rout with Nu Route.
+Tired of running the same route? Run a new route with Nu Route.
 
 ## MainPage
 
@@ -19,6 +19,11 @@ how you will be using the route. <br>
 This is where we add ourself to the page. <br>
 ![Developers](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/developers.png)
 
+## Api modal map
+
+This is our map api that was put into webpage<br>
+![mapapi](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/mapfeatures.png)
+
 ## Technologies
 
 Made with HTML, CSS, Javascript, Jquery, and Bulma as a framework.
@@ -32,10 +37,6 @@ google.maps
 Calories Burned API? Codeninja
 Motivational Quote API? Zenquotes
 
-## Api modal map
-
-This is our map api that was put into webpage<br>
-![mapapi](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/mapfeatures.png)
 
 ## Deployed
 
