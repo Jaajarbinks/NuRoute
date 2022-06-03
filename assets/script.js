@@ -1,32 +1,23 @@
-
-let quoteArea = document.getElementById('quotes-area');
-// let quoteText = document.getElementById("quote-text")
-
-// var zenUrl = 'https://zenquotes.io/api/quotes';
-
-var inquiry = document.getElementsById("input").value; 
-
-console.log(inquiry);
-
-localStorage.setItem("key", );
-console.log(localStorage);
-
-
-
+let quoteArea = document.getElementById("quotes-area");
+let inquiry = document.getElementById("inquiry");
+let email = document.getElementById("email");
+let nameInput = document.getElementById("name");
+let contactSubmit = document.getElementById("submit-btn-contact");
 
 fetch("https://type.fit/api/quotes")
-  .then(function(response) {
+  .then(function (response) {
     return response.json();
   })
-  .then(function(data) {
+  .then(function (data) {
     let i;
-    document.getElementById("quote-text").innerHTML ='"' + data[1].text + '"';
-    document.getElementById("author").innerHTML = "-" + data [1].author;
-setInterval(function() {
-    i = Math.floor(Math.random() * 1643) + 1;
-    document.getElementById("quote-text").innerHTML = '"' + data[i].text + '"';
-    document.getElementById("author").innerHTML = "- " + data[i].author;
-  }, 20000);
+    document.getElementById("quote-text").innerHTML = '"' + data[1].text + '"';
+    document.getElementById("author").innerHTML = "-" + data[1].author;
+    setInterval(function () {
+      i = Math.floor(Math.random() * 1643) + 1;
+      document.getElementById("quote-text").innerHTML =
+        '"' + data[i].text + '"';
+      document.getElementById("author").innerHTML = "- " + data[i].author;
+    }, 20000);
     console.log(data);
   });
 //main page Modal
@@ -61,15 +52,12 @@ class BulmaModal {
 
   on_show() {
     var event = new Event("modal:show");
-
     this.elem.dispatchEvent(event);
   }
   on_close() {
     var event = new Event("modal:close");
-
     this.elem.dispatchEvent(event);
   }
-
   addEventListener(event, callback) {
     this.elem.addEventListener(event, callback);
   }
@@ -77,10 +65,10 @@ class BulmaModal {
 
 var beginJourneyBtn = document.getElementById("btn1");
 var mdl = new BulmaModal("#myModal");
-let continueBtn = document.getElementById("start-btn")
+let continueBtn = document.getElementById("start-btn");
 continueBtn.onclick = function () {
-  window.open("./pages/map.html",  "_blank")
- };
+  window.open("./pages/map.html", "_blank");
+};
 
 beginJourneyBtn.addEventListener("click", function () {
   mdl.show();
@@ -96,17 +84,25 @@ mdl.addEventListener("modal:close", function () {
 
 //modal control for the contact button in nav bar
 var contactBtn = document.getElementById("contact-btn");
-var contactMdl = new BulmaModal('#contact-mdl');
+var contactMdl = new BulmaModal("#contact-mdl");
 let submitBtn = document.getElementById("#submit-btn");
 
 contactBtn.addEventListener("click", function () {
   contactMdl.show();
-})
+});
 
 //modal for the developer button in nav bar
 var developerBtn = document.getElementById("dev-btn");
-var devMdl = new BulmaModal('#modal-dev');
+var devMdl = new BulmaModal("#modal-dev");
 
 developerBtn.addEventListener("click", function () {
   devMdl.show();
-})
+});
+
+contactSubmit.addEventListener("click", () => {
+  console.log(inquiry.value, email.value, nameInput.value);
+  localStorage.setItem("inquiry-storage", inquiry.value);
+  localStorage.setItem("email-storage", email.value);
+  localStorage.setItem("name-storage", nameInput.value);
+  console.log(localStorage);
+});
