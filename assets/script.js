@@ -4,9 +4,14 @@ let quoteArea = document.getElementById('quotes-area');
 
 // var zenUrl = 'https://zenquotes.io/api/quotes';
 
-var inquiry = document.getElementsByName("input"); 
-localStorage.setItem("key", "");
+var inquiry = document.getElementsById("input").value; 
+
+console.log(inquiry);
+
+localStorage.setItem("key", );
 console.log(localStorage);
+
+
 
 
 fetch("https://type.fit/api/quotes")
