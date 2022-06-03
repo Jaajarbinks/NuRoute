@@ -1,6 +1,9 @@
 # NuRoute
 
 Tired of running the same route? Run a new route with Nu Route.
+## Deployed Link
+
+<https://itsmejustino.github.io/NuRoute/>
 
 ## MainPage
 
@@ -38,6 +41,4 @@ Calories Burned API? Codeninja
 Motivational Quote API? Zenquotes
 
 
-## Deployed
 
-<https://itsmejustino.github.io/NuRoute/>
