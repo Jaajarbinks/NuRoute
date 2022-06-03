@@ -1,9 +1,5 @@
 
 let quoteArea = document.getElementById('quotes-area');
-// let quoteText = document.getElementById("quote-text")
-
-// var zenUrl = 'https://zenquotes.io/api/quotes';
-
 
 fetch("https://type.fit/api/quotes")
   .then(function(response) {
