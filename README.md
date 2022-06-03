@@ -5,24 +5,26 @@ Tired of running the same route? Run a new route with Nu Route.
 
 <https://itsmejustino.github.io/NuRoute/>
 
-## MainPage
+## Demo Pictures
+
+### MainPage
 
 Making what our app. is all about and making more links to our github and contact and who made it.
 We added a quote section so people can learn also. <br> 
 ![mainpage NuRoute](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/Nuroute%20homepage.png)
 
-## Start Journey
+### Start Journey
 
 When you click on the start journey button it will bring you to directions for
 how you will be using the route. <br>
 ![beginning route](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/start%20run.png)
 
-## Developers page
+### Developers page
 
 This is where we add ourself to the page. <br>
 ![Developers](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/developers.png)
 
-## Api modal map
+### Api modal map
 
 This is our map api that was put into webpage<br>
 ![mapapi](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/mapfeatures.png)
