@@ -108,73 +108,102 @@ function initMap() {
     console.log(place.geometry.viewport.Ab);
     console.log(place.geometry.viewport.Ua);
     //get markerTwo lat long value can set position with setPosition(x,y,z)
-    // markerTwo.setPosition(39.5287555197085,-104.7884510697085)
+    let lat1 = marker.getPosition().lat();
+    console.log("MarkOne lat:", lat1);
+    let lng1 = marker.getPosition().lng();
+    console.log("MarkOne lng:", lng1);
+    let lat2 = markerTwo.getPosition().lat();
+    console.log("MarkTwo lat:", lat2);
+    let lng2 = markerTwo.getPosition().lng();
+    console.log("MarkTwo lng:", lng2);
 
     //function randomly generates a lat or lng value
     function generateRandomLat() {
-      var num = Math.random() * 180;
-      var latlngNum = Math.floor(Math.random());
-      if (latlngNum == 0) {
-        num = num * -1;
+      var num = getNonZeroRandomNumber();
+      // var latlngNum = Math.floor(Math.random());
+      // if (latlngNum == 0) {
+      //   num = num * -1;
+      // }
+      if (num > 0.001) {
+        let newNum = num - 0.001;
+
+        num = num - newNum;
       }
+      if (num < -0.001) {
+        let newNum = num + 0.001;
+
+        num = num - newNum;
+      }
+
+      num = num + lat1;
+      console.log("randomlatfun:", num);
       return num;
     }
+
     function generateRandomLng() {
-      var num = Math.random() * 180;
-      var latlngNum = Math.floor(Math.random());
-      if (latlngNum == 0) {
-        num = num * -1;
+      var num = getNonZeroRandomNumber();
+      // console.log("randomlngfun:", num)
+      // var latlngNum = Math.floor(Math.random());
+      // if (latlngNum == 0) {
+      //   num = num * 1;
+      // }
+      if (num > 0.001) {
+        let newNum = num - 0.001;
+
+        num = num - newNum;
       }
+      if (num < -0.001) {
+        let newNum = num + 0.001;
+
+        num = num - newNum;
+      }
+      num = num + lng1;
+      console.log("randomlngfun:", num);
       return num;
     }
-    console.log(generateRandomLat());
-    console.log(generateRandomLng());
 
-    changeMarkerPosition = (marker) => {
-      var latlng = new google.maps.LatLng(39.5287555197085, -104.7884510697085);
+    function getNonZeroRandomNumber() {
+      // checks if pos or neg
+      var posorNeg = Math.random() < 0.5 ? -1 : 1;
+      // console.log(posorNeg)
+      let random = Math.random();
+      if (posorNeg == -1) {
+        random = -Math.abs(random);
+        // console.log(random, "negative")
+      }
+      return random;
+    }
+
+    makeMarkerPosition = (mark) => {
+      var latlng = new google.maps.LatLng(generateRandomLat(), generateRandomLng());
       marker.setPosition(latlng);
+      console.log(latlng);
     };
-    // user this while loop to pass the lat, lng values to change marker position
+    console.log("lat2 position:",lat2 , "lng2 positoon:", lng2);
 
-    // while(computedDistance >= getRunLength.value){
-    //   let lat = generateRandomLat();
-    //   let lng = generateRandomLng();
-    //   generateRandomLng();
-    //   generatedRandomLat();
-    //   if(computedDistance == getRunLength.value){
-    //     lat =
-    //       break;
+    // measures distance in miles between two points
+    const R = 6371e3; // metres
+    const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radians
+    const φ2 = (lat2 * Math.PI) / 180;
+    const Δφ = ((lat2 - lat1) * Math.PI) / 180;
+    const Δλ = ((lng2 - lng1) * Math.PI) / 180;
 
-    //   }
-    // }
+    const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+      Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
+    const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
-    changeMarkerPosition(markerTwo);
-    console.log(markerTwo.getPosition().lat());
-    console.log(markerTwo.getPosition().lng());
+    const d = R * c;
+    const f = d / 3.28084;
+    const m = 5280;
+    const mileage = f / m;
+    console.log("meters:", d);
+    console.log("feet:", f);
+    console.log("total milage:", mileage);
+
+    makeMarkerPosition(markerTwo);
+    
   }
-
-  // first. randomize coordinates. test coordinates are within given user param.
-
-  //if coordinates are .5 miles of given range then compute
-
-  // const R = 6371e3; // metres
-  // const φ1 = lat1 * Math.PI/180; // φ, λ in radians
-  // const φ2 = lat2 * Math.PI/180;
-  // const Δφ = (lat2-lat1) * Math.PI/180;
-  // const Δλ = (lon2-lon1) * Math.PI/180;
-
-  // const a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-  //           Math.cos(φ1) * Math.cos(φ2) *
-  //           Math.sin(Δλ/2) * Math.sin(Δλ/2);
-  // const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-
-  // const d = R * c;
 }
-
-// let lat = place.geometry.location.
-// randomCoord = ()=> {
-
-// }
 
 // --------Moment Timer. Start/Stop/Reset Timer.-----------
 var beginButton = document.querySelector("#start");
