@@ -124,13 +124,14 @@ function initMap() {
       // if (latlngNum == 0) {
       //   num = num * -1;
       // }
-      if (num > 0.001) {
-        let newNum = num - 0.001;
+      //changing value in if statement will increase or decrease mark position. ~ .005 = .04 miles
+      if (num > 0.005) {
+        let newNum = num - 0.005;
 
         num = num - newNum;
       }
-      if (num < -0.001) {
-        let newNum = num + 0.001;
+      if (num < -0.005) {
+        let newNum = num + 0.005;
 
         num = num - newNum;
       }
@@ -147,13 +148,13 @@ function initMap() {
       // if (latlngNum == 0) {
       //   num = num * 1;
       // }
-      if (num > 0.001) {
-        let newNum = num - 0.001;
+      if (num > 0.005) {
+        let newNum = num - 0.005;
 
         num = num - newNum;
       }
-      if (num < -0.001) {
-        let newNum = num + 0.001;
+      if (num < -0.005) {
+        let newNum = num + 0.005;
 
         num = num - newNum;
       }
@@ -174,13 +175,15 @@ function initMap() {
       return random;
     }
 
-    makeMarkerPosition = (mark) => {
+    makeMarkerPosition = (marker) => {
       var latlng = new google.maps.LatLng(generateRandomLat(), generateRandomLng());
       marker.setPosition(latlng);
-      console.log(latlng);
     };
     console.log("lat2 position:",lat2 , "lng2 positoon:", lng2);
-
+    makeMarkerPosition(markerTwo);
+    // sets var values to lat a and lng current position
+    lat2 = markerTwo.getPosition().lat();
+    lng2 = markerTwo.getPosition().lng();
     // measures distance in miles between two points
     const R = 6371e3; // metres
     const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radians
@@ -200,7 +203,7 @@ function initMap() {
     console.log("feet:", f);
     console.log("total milage:", mileage);
 
-    makeMarkerPosition(markerTwo);
+   
     
   }
 }
