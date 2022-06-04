@@ -125,13 +125,13 @@ function initMap() {
       //   num = num * -1;
       // }
       //changing value in if statement will increase or decrease mark position. ~ .005 = .04 miles
-      if (num > 0.005) {
-        let newNum = num - 0.005;
+      if (num > getRunLength.value) {
+        let newNum = num - getRunLength.value;
 
         num = num - newNum;
       }
-      if (num < -0.005) {
-        let newNum = num + 0.005;
+      if (num < -getRunLength.value) {
+        let newNum = num + getRunLength.value;
 
         num = num - newNum;
       }
@@ -148,13 +148,13 @@ function initMap() {
       // if (latlngNum == 0) {
       //   num = num * 1;
       // }
-      if (num > 0.005) {
-        let newNum = num - 0.005;
+      if (num > getRunLength.value) {
+        let newNum = num - getRunLength.value;
 
         num = num - newNum;
       }
-      if (num < -0.005) {
-        let newNum = num + 0.005;
+      if (num < -getRunLength.value) {
+        let newNum = num + getRunLength.value;
 
         num = num - newNum;
       }
@@ -181,7 +181,7 @@ function initMap() {
     };
     console.log("lat2 position:",lat2 , "lng2 positoon:", lng2);
     makeMarkerPosition(markerTwo);
-    // sets var values to lat a and lng current position
+    // gets values to lat2 a and lng2 current position after random position generation
     lat2 = markerTwo.getPosition().lat();
     lng2 = markerTwo.getPosition().lng();
     // measures distance in miles between two points
