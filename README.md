@@ -31,7 +31,7 @@ This is our map api that was put into webpage<br>
 
 ## Technologies
 
-Made with HTML, CSS, Javascript, Jquery, and Bulma as a framework.
+Made with HTML, CSS, Javascript, and Bulma as a framework.
 
 ## API's
 Google.maps <br>
