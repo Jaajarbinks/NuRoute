@@ -133,13 +133,13 @@ function initMap() {
       //   num = num * -1;
       // }
       //changing value in if statement will increase or decrease mark position. ~ .005 = .04 miles
-      if (num > getRunLength.value/85) {
-        let newNum = num - getRunLength.value/85
+     if (num > getRunLength.value/170) {
+        let newNum = num - getRunLength.value/170
 
         num = num - newNum;
       }
-      if (num < -getRunLength.value/85) {
-        let newNum = num + getRunLength.value/85
+      if (num < -getRunLength.value/170) {
+        let newNum = num + getRunLength.value/170
 
         num = num - newNum;
       }
@@ -156,13 +156,13 @@ function initMap() {
       // if (latlngNum == 0) {
       //   num = num * 1;
       // }
-      if (num > getRunLength.value/85) {
-        let newNum = num - getRunLength.value/85
+      if (num > getRunLength.value/170) {
+        let newNum = num - getRunLength.value/170
 
         num = num - newNum;
       }
-      if (num < -getRunLength.value/85) {
-        let newNum = num + getRunLength.value/85
+      if (num < -getRunLength.value/170) {
+        let newNum = num + getRunLength.value/170
 
         num = num - newNum;
       }
