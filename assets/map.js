@@ -1,6 +1,5 @@
 //APIS here
 let googleAPIKEY = "AIzaSyDClUF1y_PFdn5iZkZs42H6IfXp2_dAEWI";
-let fitnessCalcAPIKEY = "";
 //Map
 ("use strict");
 
@@ -118,20 +117,20 @@ function initMap() {
     console.log("MarkTwo lng:", lng2);
 
     //function randomly generates a lat or lng value
-    function generateRandomLat() {
+    generateRandomLat = () => {
       var num = getNonZeroRandomNumber();
       // var latlngNum = Math.floor(Math.random());
       // if (latlngNum == 0) {
       //   num = num * -1;
       // }
       //changing value in if statement will increase or decrease mark position. ~ .005 = .04 miles
-      if (num > getRunLength.value) {
-        let newNum = num - getRunLength.value;
+      if (num > 0.02) {
+        let newNum = num - 0.02;
 
         num = num - newNum;
       }
-      if (num < -getRunLength.value) {
-        let newNum = num + getRunLength.value;
+      if (num < -0.02) {
+        let newNum = num + 0.02;
 
         num = num - newNum;
       }
@@ -139,29 +138,29 @@ function initMap() {
       num = num + lat1;
       console.log("randomlatfun:", num);
       return num;
-    }
+    };
 
-    function generateRandomLng() {
+    generateRandomLng = () => {
       var num = getNonZeroRandomNumber();
       // console.log("randomlngfun:", num)
       // var latlngNum = Math.floor(Math.random());
       // if (latlngNum == 0) {
       //   num = num * 1;
       // }
-      if (num > getRunLength.value) {
-        let newNum = num - getRunLength.value;
+      if (num > 0.02) {
+        let newNum = num - 0.02;
 
         num = num - newNum;
       }
-      if (num < -getRunLength.value) {
-        let newNum = num + getRunLength.value;
+      if (num < -0.02) {
+        let newNum = num + 0.02;
 
         num = num - newNum;
       }
       num = num + lng1;
       console.log("randomlngfun:", num);
       return num;
-    }
+    };
 
     function getNonZeroRandomNumber() {
       // checks if pos or neg
@@ -174,37 +173,53 @@ function initMap() {
       }
       return random;
     }
+    // while (measureDistance() > 2 && measureDistance() < 0 ) {
+    //   lat2 = generateRandomLat();
+    //   lng2 = generateRandomLng();
+
+    //   console.log()
+    //   if( mileage == getRunLength.value.value){
+
+    //     return;
+    //   }
+    // }
+    // measures distance in miles between two points
+    //Haversine Formula
 
     makeMarkerPosition = (marker) => {
-      var latlng = new google.maps.LatLng(generateRandomLat(), generateRandomLng());
+      var latlng = new google.maps.LatLng(
+        generateRandomLat(),
+        generateRandomLng()
+      );
       marker.setPosition(latlng);
     };
-    console.log("lat2 position:",lat2 , "lng2 positoon:", lng2);
+    console.log("lat2 position:", lat2, "lng2 positoon:", lng2);
     makeMarkerPosition(markerTwo);
     // gets values to lat2 a and lng2 current position after random position generation
     lat2 = markerTwo.getPosition().lat();
     lng2 = markerTwo.getPosition().lng();
-    // measures distance in miles between two points
+    console.log("lat2 position:", lat2, "lng2 positoon:", lng2);
+    console.log("lat1 position:", lat1, "lng1 positoon:", lng1);
+
     const R = 6371e3; // metres
     const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radians
     const φ2 = (lat2 * Math.PI) / 180;
     const Δφ = ((lat2 - lat1) * Math.PI) / 180;
     const Δλ = ((lng2 - lng1) * Math.PI) / 180;
 
-    const a = Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
+    const a =
+      Math.sin(Δφ / 2) * Math.sin(Δφ / 2) +
       Math.cos(φ1) * Math.cos(φ2) * Math.sin(Δλ / 2) * Math.sin(Δλ / 2);
     const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
 
     const d = R * c;
-    const f = d / 3.28084;
+    console.log("total meters:", d);
+    const f = d * 3.28084;
     const m = 5280;
-    const mileage = f / m;
-    console.log("meters:", d);
+    let mileage = f / m;
+
     console.log("feet:", f);
     console.log("total milage:", mileage);
-
-   
-    
   }
 }
 
