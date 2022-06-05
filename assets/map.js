@@ -65,6 +65,12 @@ function initMap() {
       window.alert("No details available for input: '" + place.name + "'");
       return;
     }
+    if (!getRunLength.value) {
+      // User entered the name of a Place that was not suggested and
+      // pressed the Enter key, or the Place Details request failed.
+      window.alert("Please enter a run length. ");
+      return;
+    }
 
     renderAddress(place);
     fillInAddress(place);
