@@ -66,8 +66,7 @@ function initMap() {
       return;
     }
     if (!getRunLength.value) {
-      // User entered the name of a Place that was not suggested and
-      // pressed the Enter key, or the Place Details request failed.
+      // user did not enter a run length 
       window.alert("Please enter a run length. ");
       return;
     }
@@ -128,11 +127,8 @@ function initMap() {
     //function randomly generates a lat or lng value
     generateRandomLat = () => {
       var num = getNonZeroRandomNumber();
-      // var latlngNum = Math.floor(Math.random());
-      // if (latlngNum == 0) {
-      //   num = num * -1;
-      // }
-      //changing value in if statement will increase or decrease mark position. ~ .005 = .04 miles
+    
+    //changing value in if statement will increase or decrease mark position. computes within range most of time.
      if (num > getRunLength.value/170) {
         let newNum = num - getRunLength.value/170
 
@@ -151,11 +147,7 @@ function initMap() {
 
     generateRandomLng = () => {
       var num = getNonZeroRandomNumber();
-      // console.log("randomlngfun:", num)
-      // var latlngNum = Math.floor(Math.random());
-      // if (latlngNum == 0) {
-      //   num = num * 1;
-      // }
+      
       if (num > getRunLength.value/170) {
         let newNum = num - getRunLength.value/170
 
@@ -174,24 +166,15 @@ function initMap() {
     function getNonZeroRandomNumber() {
       // checks if pos or neg
       var posorNeg = Math.random() < 0.5 ? -1 : 1;
-      // console.log(posorNeg)
+      
       let random = Math.random();
       if (posorNeg == -1) {
         random = -Math.abs(random);
-        // console.log(random, "negative")
+        
       }
       return random;
     }
-    // while (measureDistance() > 2 && measureDistance() < 0 ) {
-    //   lat2 = generateRandomLat();
-    //   lng2 = generateRandomLng();
-
-    //   console.log()
-    //   if( mileage == getRunLength.value.value){
-
-    //     return;
-    //   }
-    // }
+  
     // measures distance in miles between two points
     //Haversine Formula
 
@@ -202,7 +185,7 @@ function initMap() {
       );
       marker.setPosition(latlng);
     };
-    console.log("lat2 position:", lat2, "lng2 positoon:", lng2);
+    
     makeMarkerPosition(markerTwo);
     // gets values to lat2 a and lng2 current position after random position generation
     lat2 = markerTwo.getPosition().lat();
@@ -254,7 +237,6 @@ startTimer = () => {
       second: 0,
       millisecond: 0,
     });
-    //****try commenting out line 116 to see its original return.*******
     document.querySelector("#clock").innerHTML = "00:00:00";
   });
   stopButton.addEventListener("click", () => {
