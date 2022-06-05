@@ -1,11 +1,11 @@
 //APIS here
 let googleAPIKEY = "AIzaSyDClUF1y_PFdn5iZkZs42H6IfXp2_dAEWI";
 //Map
-"use strict";
+("use strict");
 
-let routeBtn= document.getElementById("gen-route-btn");
+let routeBtn = document.getElementById("gen-route-btn");
 
-function initMap() {
+initMap = () => {
   const CONFIGURATION = {
     ctaTitle: "Checkout",
     mapOptions: {
@@ -55,7 +55,7 @@ function initMap() {
   //getRunLength is the length that will be between given start point and randomly generated end point.
   let getRunLength = document.getElementById("length-input");
   // routeBtn.addEventListener("click", renderAddress(place));
-  routeBtn.addEventListener("click", function () {
+  routeBtn.addEventListener("click", () => {
     marker.setVisible(true);
     markerTwo.setVisible(true);
     const place = autocomplete.getPlace();
@@ -66,7 +66,7 @@ function initMap() {
       return;
     }
     if (!getRunLength.value) {
-      // user did not enter a run length 
+      // user did not enter a run length
       window.alert("Please enter a run length. ");
       return;
     }
@@ -75,7 +75,7 @@ function initMap() {
     fillInAddress(place);
   });
 
-  function fillInAddress(place) {
+  fillInAddress = (place) => {
     // optional parameter
     const addressNameFormat = {
       street_number: "short_name",
@@ -101,10 +101,10 @@ function initMap() {
         getFormInputElement(component).value = getAddressComp(component);
       }
     }
-  }
+  };
 
   ////using render address to log data of objects and test random lat lon and marker tracking
-  function renderAddress(place) {
+  renderAddress = (place) => {
     map.setCenter(place.geometry.location);
     marker.setPosition(place.geometry.location);
     markerTwo.setPosition(place.geometry.location);
@@ -127,15 +127,15 @@ function initMap() {
     //function randomly generates a lat or lng value
     generateRandomLat = () => {
       var num = getNonZeroRandomNumber();
-    
-    //changing value in if statement will increase or decrease mark position. computes within range most of time.
-     if (num > getRunLength.value/170) {
-        let newNum = num - getRunLength.value/170
+
+      //changing value in if statement will increase or decrease mark position. computes within range most of time.
+      if (num > getRunLength.value / 170) {
+        let newNum = num - getRunLength.value / 170;
 
         num = num - newNum;
       }
-      if (num < -getRunLength.value/170) {
-        let newNum = num + getRunLength.value/170
+      if (num < -getRunLength.value / 170) {
+        let newNum = num + getRunLength.value / 170;
 
         num = num - newNum;
       }
@@ -147,14 +147,14 @@ function initMap() {
 
     generateRandomLng = () => {
       var num = getNonZeroRandomNumber();
-      
-      if (num > getRunLength.value/170) {
-        let newNum = num - getRunLength.value/170
+
+      if (num > getRunLength.value / 170) {
+        let newNum = num - getRunLength.value / 170;
 
         num = num - newNum;
       }
-      if (num < -getRunLength.value/170) {
-        let newNum = num + getRunLength.value/170
+      if (num < -getRunLength.value / 170) {
+        let newNum = num + getRunLength.value / 170;
 
         num = num - newNum;
       }
@@ -163,20 +163,16 @@ function initMap() {
       return num;
     };
 
-    function getNonZeroRandomNumber() {
+    getNonZeroRandomNumber = () => {
       // checks if pos or neg
       var posorNeg = Math.random() < 0.5 ? -1 : 1;
-      
+
       let random = Math.random();
       if (posorNeg == -1) {
         random = -Math.abs(random);
-        
       }
       return random;
-    }
-  
-    // measures distance in miles between two points
-    //Haversine Formula
+    };
 
     makeMarkerPosition = (marker) => {
       var latlng = new google.maps.LatLng(
@@ -185,7 +181,7 @@ function initMap() {
       );
       marker.setPosition(latlng);
     };
-    
+
     makeMarkerPosition(markerTwo);
     // gets values to lat2 a and lng2 current position after random position generation
     lat2 = markerTwo.getPosition().lat();
@@ -193,6 +189,8 @@ function initMap() {
     console.log("lat2 position:", lat2, "lng2 positoon:", lng2);
     console.log("lat1 position:", lat1, "lng1 positoon:", lng1);
 
+    // measures distance in miles between two points
+    //Haversine Formula
     const R = 6371e3; // metres
     const φ1 = (lat1 * Math.PI) / 180; // φ, λ in radians
     const φ2 = (lat2 * Math.PI) / 180;
@@ -212,10 +210,8 @@ function initMap() {
 
     console.log("feet:", f);
     console.log("total milage:", mileage);
-  }
-}
-
-
+  };
+};
 
 // --------Moment Timer. Start/Stop/Reset Timer.-----------
 var beginButton = document.querySelector("#start");
