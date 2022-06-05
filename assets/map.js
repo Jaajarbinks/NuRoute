@@ -1,7 +1,9 @@
 //APIS here
 let googleAPIKEY = "AIzaSyDClUF1y_PFdn5iZkZs42H6IfXp2_dAEWI";
 //Map
-("use strict");
+"use strict";
+
+let routeBtn= document.getElementById("gen-route-btn");
 
 function initMap() {
   const CONFIGURATION = {
@@ -52,7 +54,8 @@ function initMap() {
   });
   //getRunLength is the length that will be between given start point and randomly generated end point.
   let getRunLength = document.getElementById("length-input");
-  autocomplete.addListener("place_changed", function () {
+  // routeBtn.addEventListener("click", renderAddress(place));
+  routeBtn.addEventListener("click", function () {
     marker.setVisible(true);
     markerTwo.setVisible(true);
     const place = autocomplete.getPlace();
@@ -124,13 +127,13 @@ function initMap() {
       //   num = num * -1;
       // }
       //changing value in if statement will increase or decrease mark position. ~ .005 = .04 miles
-      if (num > 0.02) {
-        let newNum = num - 0.02;
+      if (num > getRunLength.value/85) {
+        let newNum = num - getRunLength.value/85
 
         num = num - newNum;
       }
-      if (num < -0.02) {
-        let newNum = num + 0.02;
+      if (num < -getRunLength.value/85) {
+        let newNum = num + getRunLength.value/85
 
         num = num - newNum;
       }
@@ -147,13 +150,13 @@ function initMap() {
       // if (latlngNum == 0) {
       //   num = num * 1;
       // }
-      if (num > 0.02) {
-        let newNum = num - 0.02;
+      if (num > getRunLength.value/85) {
+        let newNum = num - getRunLength.value/85
 
         num = num - newNum;
       }
-      if (num < -0.02) {
-        let newNum = num + 0.02;
+      if (num < -getRunLength.value/85) {
+        let newNum = num + getRunLength.value/85
 
         num = num - newNum;
       }
@@ -222,6 +225,8 @@ function initMap() {
     console.log("total milage:", mileage);
   }
 }
+
+
 
 // --------Moment Timer. Start/Stop/Reset Timer.-----------
 var beginButton = document.querySelector("#start");
