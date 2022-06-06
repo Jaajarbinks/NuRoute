@@ -128,7 +128,7 @@ initMap = () => {
     generateRandomLat = () => {
       var num = getNonZeroRandomNumber();
 
-      //changing value in if statement will increase or decrease mark position. computes within range most of time.
+      //changing value in if statement will increase or decrease mark position. computes within range 90% of time
       if (num > getRunLength.value / 170) {
         let newNum = num - getRunLength.value / 170;
 
