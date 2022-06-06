@@ -1,4 +1,8 @@
-let quoteArea = document.getElementById("quotes-area");
+
+
+let quoteArea = document.getElementById('quotes-area');
+let i;
+
 let inquiry = document.getElementById("inquiry");
 let email = document.getElementById("email");
 let nameInput = document.getElementById("name");
@@ -8,6 +12,7 @@ fetch("https://type.fit/api/quotes")
   .then(function (response) {
     return response.json();
   })
+
   .then(function (data) {
     let i;
     document.getElementById("quote-text").innerHTML = '"' + data[1].text + '"';
@@ -18,6 +23,7 @@ fetch("https://type.fit/api/quotes")
         '"' + data[i].text + '"';
       document.getElementById("author").innerHTML = "- " + data[i].author;
     }, 20000);
+
     console.log(data);
   });
 //main page Modal
