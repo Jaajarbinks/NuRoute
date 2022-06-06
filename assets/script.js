@@ -3,7 +3,6 @@
 let quoteArea = document.getElementById('quotes-area');
 let i;
 
-let quoteArea = document.getElementById("quotes-area");
 let inquiry = document.getElementById("inquiry");
 let email = document.getElementById("email");
 let nameInput = document.getElementById("name");
