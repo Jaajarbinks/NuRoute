@@ -1,6 +1,7 @@
 # NuRoute
 
 Tired of running the same route? Run a new route with Nu Route.
+
 ## Deployed Link
 
 <https://itsmejustino.github.io/NuRoute/>
@@ -31,11 +32,16 @@ This is our map api that was put into webpage<br>
 
 ## Technologies
 
-Made with HTML, CSS, Javascript, Jquery, and Bulma as a framework.
+Made with HTML, CSS, Javascript, and Bulma as a framework.
 
 ## API's
+
 Google.maps <br>
-Motivational Quote API by Type Fit Motivational Quotes
+Motivational Quote API by Type Fit Motivational 
 
+## planning for the future
 
-
+~ For our project we need to implement an api for using music while running route is active.
+~ Getting our map api to show the destinations on a road or sidewalk on the map api this way our runners are not going into a lake or house.
+~ Make our project implementing on some different types of divices.
+~Email results of time run to me.
