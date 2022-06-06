@@ -135,3 +135,10 @@ input:focus::placeholder {
   background-color: rgba(146, 174, 207, 0.774);
   cursor: pointer;
 }
+
+#gb-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 25px;
+}

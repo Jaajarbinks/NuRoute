@@ -252,3 +252,9 @@ saveButton.addEventListener("click", () => {
 beginButton.addEventListener("click", () => {
   startTimer(timer);
 });
+
+//back home button
+let goBack = document.getElementById("go-back");
+goBack.onclick = () => {
+  window.open("../index.html", "_blank");
+};
