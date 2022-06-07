@@ -88,8 +88,7 @@ initMap = () => {
     marker.setVisible(true);
     markerTwo.setVisible(true);
     if (!place) {
-      // User entered the name of a Place that was not suggested and
-      // pressed the Enter key, or the Place Details request failed.
+      // User entered the name of a Place that was not suggested 
       compShow();
       compHide(); 
       return;
@@ -102,7 +101,6 @@ initMap = () => {
     }
       fillInAddress(place);
       renderAddress(place);
-      console.log(autocompleteInput);
   });
   
   fillInAddress = (place) => {
@@ -249,8 +247,8 @@ var stopButton = document.querySelector("#stop");
 var resetButton = document.querySelector("#reset");
 var saveButton = document.querySelector("#save");
 var timer = moment().startOf("day");
-document.querySelector("#clock").innerHTML = "00:00:00";
 let storedTime = document.getElementById("save-container");
+document.querySelector("#clock").innerHTML = "00:00:00";
 startTimer = () => {
   var r = setInterval(() => {
     timer.add(1, "second");
@@ -275,6 +273,7 @@ saveTime = () => {
   let time = document.querySelector("#clock").innerHTML;
   localStorage.setItem("savedTime", time);
 };
+
 displaySavedTime = () => {
   let timestampEl = document.createElement("p");
   let timeVal = localStorage.getItem("savedTime");
@@ -284,9 +283,11 @@ displaySavedTime = () => {
   storedTime.appendChild(timestampEl);
 }
 displaySavedTime();
+
 saveButton.addEventListener("click", () => {
+  
   saveTime();
-  displaySavedTime()
+  displaySavedTime();
 });
 
 beginButton.addEventListener("click", () => {
