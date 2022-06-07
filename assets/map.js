@@ -250,6 +250,7 @@ var resetButton = document.querySelector("#reset");
 var saveButton = document.querySelector("#save");
 var timer = moment().startOf("day");
 document.querySelector("#clock").innerHTML = "00:00:00";
+let storedTime = document.getElementById("save-container");
 startTimer = () => {
   var r = setInterval(() => {
     timer.add(1, "second");
@@ -274,9 +275,18 @@ saveTime = () => {
   let time = document.querySelector("#clock").innerHTML;
   localStorage.setItem("savedTime", time);
 };
-
+displaySavedTime = () => {
+  let timestampEl = document.createElement("p");
+  let timeVal = localStorage.getItem("savedTime");
+  console.log(timeVal)
+   timestampEl.textContent = "Your Saved Time: " +timeVal;
+  console.log(timestampEl)
+  storedTime.appendChild(timestampEl);
+}
+displaySavedTime();
 saveButton.addEventListener("click", () => {
   saveTime();
+  displaySavedTime()
 });
 
 beginButton.addEventListener("click", () => {
