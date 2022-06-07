@@ -47,7 +47,7 @@ Made with HTML, CSS, Javascript, and Bulma as a framework.
 Google.maps <br>
 Motivational Quote API by Type Fit Motivational 
 
-## planning for the future
+## Planning For the Future
 We have many plans for the future of the application that will not only make the it more verstatile but more in depth as well. Some of the features include:
 * Add a music playing API (such as Spotify) to be able to play music while in the middle of the run created by the app
 * Implement a fitness API that will be able to track and display multiple health related statistics such a heart rate, calories, etc... which is connected from something like a smart watch to track those statistics
