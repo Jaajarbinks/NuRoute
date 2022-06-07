@@ -190,7 +190,7 @@ margin-left:10%;
   }
   
   }
-  @media (max-width: 795px) { 
+  @media (max-width: 792px) { 
     .map{
       width: 300px; 
       height: 300px;
@@ -199,6 +199,7 @@ margin-left:10%;
     .panel{
       height:auto;
     }
+   
     
     }
 
@@ -208,6 +209,7 @@ margin-left:10%;
     height: 100%;
     width: 100%;
   } 
+  
 }
 @media (max-width:1100px) { 
   body {

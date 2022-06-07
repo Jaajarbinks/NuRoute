@@ -8,23 +8,29 @@ let routeBtn = document.getElementById("gen-route-btn");
 Hide = () => {
   setTimeout(function() {
     document.getElementById("warning-container").style.display = "none";
+    document.getElementById("length-input").style.border = "none";
+    document.getElementById("length-input").style.borderBottom = "1px solid black";
   
 }, 4000) 
 }
 Show = () => {
   setTimeout(function() {
     document.getElementById("warning-container").style.display = "block";
+    document.getElementById("length-input").style.border = "thin solid red";
 }, 0)
 }
 compHide = () => {
   setTimeout(function() {
     document.getElementById("second-warning-container").style.display = "none";
+    document.getElementById("location-input").style.border = "none";
+    document.getElementById("location-input").style.borderBottom = "1px solid black";
   
 }, 4000) 
 }
 compShow = () => {
   setTimeout(function() {
     document.getElementById("second-warning-container").style.display = "block";
+    document.getElementById("location-input").style.border = "thin solid red";
 }, 0)
 }
 
