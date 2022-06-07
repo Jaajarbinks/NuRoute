@@ -5,6 +5,29 @@ let googleAPIKEY = "AIzaSyDClUF1y_PFdn5iZkZs42H6IfXp2_dAEWI";
 
 let routeBtn = document.getElementById("gen-route-btn");
 
+Hide = () => {
+  setTimeout(function() {
+    document.getElementById("warning-container").style.display = "none";
+  
+}, 4000) 
+}
+Show = () => {
+  setTimeout(function() {
+    document.getElementById("warning-container").style.display = "block";
+}, 0)
+}
+compHide = () => {
+  setTimeout(function() {
+    document.getElementById("second-warning-container").style.display = "none";
+  
+}, 4000) 
+}
+compShow = () => {
+  setTimeout(function() {
+    document.getElementById("second-warning-container").style.display = "block";
+}, 0)
+}
+
 initMap = () => {
   const CONFIGURATION = {
     ctaTitle: "Checkout",
@@ -48,45 +71,40 @@ initMap = () => {
   const marker = new google.maps.Marker({ map: map, draggable: true });
   const markerTwo = new google.maps.Marker({ map: map, draggable: true });
   const autocompleteInput = getFormInputElement("location");
+  
   const autocomplete = new google.maps.places.Autocomplete(autocompleteInput, {
     fields: ["address_components", "geometry", "name"],
     types: ["address"],
   });
+
+  
   //getRunLength is the length that will be between given start point and randomly generated end point.
   let getRunLength = document.getElementById("length-input");
   // routeBtn.addEventListener("click", renderAddress(place));
+  
+  
   routeBtn.addEventListener("click", () => {
+    const place = autocomplete.getPlace();
     marker.setVisible(true);
     markerTwo.setVisible(true);
-    const place = autocomplete.getPlace();
-    if (!place.geometry) {
+    if (!place) {
       // User entered the name of a Place that was not suggested and
       // pressed the Enter key, or the Place Details request failed.
-      window.alert("No details available for input: '" + place.name + "'");
+      compShow();
+      compHide(); 
       return;
     }
-    Hide();
+
     if (!getRunLength.value) {
-      // user did not enter a run length
-      Show = () => {
-        setTimeout(function() {
-          document.getElementById("warning-container").style.display = "block";
-      }, 0)
-      }
-      show();
-      Hide = () => {
-        setTimeout(function() {
-          document.getElementById("warning-container").style.display = "block";
-        
-      }, 4000) 
-      }
-      Hide();
+      Show();
+      Hide(); 
+      return;
     }
-
-    renderAddress(place);
-    fillInAddress(place);
+      fillInAddress(place);
+      renderAddress(place);
+      console.log(autocompleteInput);
   });
-
+  
   fillInAddress = (place) => {
     // optional parameter
     const addressNameFormat = {
