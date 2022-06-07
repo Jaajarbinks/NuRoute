@@ -99,6 +99,11 @@ margin-left:10%;
 
 #flex-container {
   margin-left: 10px;
+    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+  
 }
 
 #clock {
