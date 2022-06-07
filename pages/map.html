@@ -54,13 +54,26 @@
     <button class ="button-cta" id="go-back">  << Go Back to Home Page </button>
   </div>
 
-  <div class='container has-text-centered' id="warning-container">
+  <div class='container has-text-centered' style="display: none;" id="warning-container">
     <div class='columns is-mobile is-centered'>
       <div class='column is-6'>
-        <div class='notification is-primary is-light'>
+        <div class='notification is-primary is-light'id="warning-container">
           <button class="delete" onclick="this.parentElement.style.display='none'"></button>
           <p class="is-text has-text-dark">
-            Remember to enter your desired Run length before contuining to generate your route!
+            Remember to enter your desired Run length before continuing to generate your route!
+          </p>
+ 
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class='container has-text-centered' style="display: none;" id="second-warning-container">
+    <div class='columns is-mobile is-centered'>
+      <div class='column is-6'>
+        <div class='notification is-primary is-light'id="warning-container">
+          <button class="delete" onclick="this.parentElement.style.display='none'"></button>
+          <p class="is-text has-text-dark">
+            Remember to enter your full address with Google Auto fill or manually. All field must be filled!
           </p>
  
         </div>
