@@ -71,6 +71,7 @@ initMap = () => {
   const marker = new google.maps.Marker({ map: map, draggable: true });
   const markerTwo = new google.maps.Marker({ map: map, draggable: true });
   const autocompleteInput = getFormInputElement("location");
+  
   const autocomplete = new google.maps.places.Autocomplete(autocompleteInput, {
     fields: ["address_components", "geometry", "name"],
     types: ["address"],
@@ -80,27 +81,30 @@ initMap = () => {
   //getRunLength is the length that will be between given start point and randomly generated end point.
   let getRunLength = document.getElementById("length-input");
   // routeBtn.addEventListener("click", renderAddress(place));
+  
+  
   routeBtn.addEventListener("click", () => {
+    const place = autocomplete.getPlace();
     marker.setVisible(true);
     markerTwo.setVisible(true);
-    const place = autocomplete.getPlace();
-    if (!componentFor["address"].length) {
+    if (!place) {
       // User entered the name of a Place that was not suggested and
       // pressed the Enter key, or the Place Details request failed.
       compShow();
       compHide(); 
-      Return;
+      return;
     }
+
     if (!getRunLength.value) {
       Show();
       Hide(); 
       return;
     }
-
-    renderAddress(place);
-    fillInAddress(place);
+      fillInAddress(place);
+      renderAddress(place);
+      console.log(autocompleteInput);
   });
-
+  
   fillInAddress = (place) => {
     // optional parameter
     const addressNameFormat = {
