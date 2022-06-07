@@ -65,10 +65,22 @@ initMap = () => {
       window.alert("No details available for input: '" + place.name + "'");
       return;
     }
+    Hide();
     if (!getRunLength.value) {
       // user did not enter a run length
-      window.alert("Please enter a run length. ");
-      return;
+      Show = () => {
+        setTimeout(function() {
+          document.getElementById("warning-container").style.display = "block";
+      }, 0)
+      }
+      show();
+      Hide = () => {
+        setTimeout(function() {
+          document.getElementById("warning-container").style.display = "block";
+        
+      }, 4000) 
+      }
+      Hide();
     }
 
     renderAddress(place);
@@ -219,7 +231,7 @@ var stopButton = document.querySelector("#stop");
 var resetButton = document.querySelector("#reset");
 var saveButton = document.querySelector("#save");
 var timer = moment().startOf("day");
-
+document.querySelector("#clock").innerHTML = "00:00:00";
 startTimer = () => {
   var r = setInterval(() => {
     timer.add(1, "second");
@@ -252,3 +264,11 @@ saveButton.addEventListener("click", () => {
 beginButton.addEventListener("click", () => {
   startTimer(timer);
 });
+
+//back home button
+let goBack = document.getElementById("go-back");
+goBack.onclick = () => {
+  window.open("../index.html", "_blank");
+};
+
+
