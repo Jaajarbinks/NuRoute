@@ -18,8 +18,8 @@ SO THAT I can run a new route whenever I want to make my running/jogging/walking
 
 ### MainPage
 
-Making what our app. is all about and making more links to our github and contact and who made it.
-We added a quote section so people can learn also. <br> 
+Navigation on page to connected to the Github repo, a contact form, and creators.
+A random inspirational quote will cycle through once every ~2min. <br> 
 ![mainpage NuRoute](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/Nuroute%20homepage.png)
 
 ### Start Journey
