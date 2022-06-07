@@ -65,6 +65,23 @@ initMap = () => {
       window.alert("No details available for input: '" + place.name + "'");
       return;
     }
+    Hide();
+    if (!getRunLength.value) {
+      // user did not enter a run length
+      Show = () => {
+        setTimeout(function() {
+          document.getElementById("warning-container").style.display = "block";
+      }, 0)
+      }
+      show();
+      Hide = () => {
+        setTimeout(function() {
+          document.getElementById("warning-container").style.display = "block";
+        
+      }, 4000) 
+      }
+      Hide();
+    }
 
     renderAddress(place);
     fillInAddress(place);
@@ -253,3 +270,5 @@ let goBack = document.getElementById("go-back");
 goBack.onclick = () => {
   window.open("../index.html", "_blank");
 };
+
+
