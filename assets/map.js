@@ -214,7 +214,7 @@ var stopButton = document.querySelector("#stop");
 var resetButton = document.querySelector("#reset");
 var saveButton = document.querySelector("#save");
 var timer = moment().startOf("day");
-
+document.querySelector("#clock").innerHTML = "00:00:00";
 startTimer = () => {
   var r = setInterval(() => {
     timer.add(1, "second");
@@ -247,3 +247,9 @@ saveButton.addEventListener("click", () => {
 beginButton.addEventListener("click", () => {
   startTimer(timer);
 });
+
+//back home button
+let goBack = document.getElementById("go-back");
+goBack.onclick = () => {
+  window.open("../index.html", "_blank");
+};

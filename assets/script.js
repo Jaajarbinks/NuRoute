@@ -7,16 +7,15 @@ let inquiry = document.getElementById("inquiry");
 let email = document.getElementById("email");
 let nameInput = document.getElementById("name");
 let contactSubmit = document.getElementById("submit-btn-contact");
-
 fetch("https://type.fit/api/quotes")
   .then(function (response) {
     return response.json();
   })
 
   .then(function (data) {
-    let i;
-    document.getElementById("quote-text").innerHTML = '"' + data[1].text + '"';
-    document.getElementById("author").innerHTML = "-" + data[1].author;
+    i = Math.floor(Math.random() * 1643) + 1;
+    document.getElementById("quote-text").innerHTML = '"' + data[i].text + '"';
+    document.getElementById("author").innerHTML = "-" + data[i].author;
     setInterval(function () {
       i = Math.floor(Math.random() * 1643) + 1;
       document.getElementById("quote-text").innerHTML =
