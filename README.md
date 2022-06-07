@@ -6,6 +6,14 @@ Tired of running the same route? Run a new route with Nu Route. Nu Route will ra
 
 <https://itsmejustino.github.io/NuRoute/>
 
+## User Story
+
+```
+AS A runner/jogger/walker
+I WANT to be able randomly generate a route and be motivated for the run
+SO THAT I can run a new route whenever I want to make my running/jogging/walking routes more interesting.
+```
+
 ## Demo Pictures
 
 ### MainPage
@@ -40,8 +48,8 @@ Google.maps <br>
 Motivational Quote API by Type Fit Motivational 
 
 ## planning for the future
-
-~ For our project we need to implement an api for using music while running route is active.
-~ Getting our map api to show the destinations on a road or sidewalk on the map api this way our runners are not going into a lake or house.
-~ Make our project implementing on some different types of divices.
-~Email results of time run to me.
+We have many plans for the future of the application that will not only make the it more verstatile but more in depth as well. Some of the features include:
+* Add a music playing API (such as Spotify) to be able to play music while in the middle of the run created by the app
+* Implement a fitness API that will be able to track and display multiple health related statistics such a heart rate, calories, etc... which is connected from something like a smart watch to track those statistics
+* Implement an API that will email all the results to you so that you can keep records of the runs
+* Implement a feature with the Google maps API that shows the destinations on the roads of sidewalks and gives a clear path to avoid running into lakes or other people's houses
