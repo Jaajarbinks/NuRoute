@@ -65,11 +65,6 @@ initMap = () => {
       window.alert("No details available for input: '" + place.name + "'");
       return;
     }
-    if (!getRunLength.value) {
-      // user did not enter a run length
-      window.alert("Please enter a run length. ");
-      return;
-    }
 
     renderAddress(place);
     fillInAddress(place);

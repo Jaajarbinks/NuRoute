@@ -1,6 +1,6 @@
 # NuRoute
 
-Tired of running the same route? Run a new route with Nu Route.
+Tired of running the same route? Run a new route with Nu Route. Nu Route will randomly generate a running route for you so you can take the thought about where you want to run.
 
 ## Deployed Link
 
