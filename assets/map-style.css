@@ -90,6 +90,8 @@ input:focus::placeholder {
   border-color: black;
   border-style: solid;
   border-radius: 5px;
+  margin-right:250px;
+  margin-left:250px;
   padding: 10px;
   box-shadow: 0 6px 8px 0 rgb(0 0 0 / 48%);
 }
