@@ -8,23 +8,29 @@ let routeBtn = document.getElementById("gen-route-btn");
 Hide = () => {
   setTimeout(function() {
     document.getElementById("warning-container").style.display = "none";
+    document.getElementById("length-input").style.border = "none";
+    document.getElementById("length-input").style.borderBottom = "1px solid black";
   
 }, 4000) 
 }
 Show = () => {
   setTimeout(function() {
     document.getElementById("warning-container").style.display = "block";
+    document.getElementById("length-input").style.border = "thin solid red";
 }, 0)
 }
 compHide = () => {
   setTimeout(function() {
     document.getElementById("second-warning-container").style.display = "none";
+    document.getElementById("location-input").style.border = "none";
+    document.getElementById("location-input").style.borderBottom = "1px solid black";
   
 }, 4000) 
 }
 compShow = () => {
   setTimeout(function() {
     document.getElementById("second-warning-container").style.display = "block";
+    document.getElementById("location-input").style.border = "thin solid red";
 }, 0)
 }
 
@@ -88,8 +94,7 @@ initMap = () => {
     marker.setVisible(true);
     markerTwo.setVisible(true);
     if (!place) {
-      // User entered the name of a Place that was not suggested and
-      // pressed the Enter key, or the Place Details request failed.
+      // User entered the name of a Place that was not suggested 
       compShow();
       compHide(); 
       return;
@@ -102,7 +107,6 @@ initMap = () => {
     }
       fillInAddress(place);
       renderAddress(place);
-      console.log(autocompleteInput);
   });
   
   fillInAddress = (place) => {
@@ -249,8 +253,8 @@ var stopButton = document.querySelector("#stop");
 var resetButton = document.querySelector("#reset");
 var saveButton = document.querySelector("#save");
 var timer = moment().startOf("day");
-document.querySelector("#clock").innerHTML = "00:00:00";
 let storedTime = document.getElementById("save-container");
+document.querySelector("#clock").innerHTML = "00:00:00";
 startTimer = () => {
   var r = setInterval(() => {
     timer.add(1, "second");
@@ -275,6 +279,7 @@ saveTime = () => {
   let time = document.querySelector("#clock").innerHTML;
   localStorage.setItem("savedTime", time);
 };
+
 displaySavedTime = () => {
   let timestampEl = document.createElement("p");
   let timeVal = localStorage.getItem("savedTime");
@@ -284,9 +289,11 @@ displaySavedTime = () => {
   storedTime.appendChild(timestampEl);
 }
 displaySavedTime();
+
 saveButton.addEventListener("click", () => {
+  
   saveTime();
-  displaySavedTime()
+  displaySavedTime();
 });
 
 beginButton.addEventListener("click", () => {
