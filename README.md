@@ -25,17 +25,17 @@ We added a quote section so people can learn also. <br>
 ### Start Journey
 
 When you click on the start journey button it will bring you to directions for
-how you will be using the route. <br>
+how you will be using the route generator. <br>
 ![beginning route](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/start%20run.png)
 
 ### Developers page
 
-This is where we add ourself to the page. <br>
+The Creators <br>
 ![Developers](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/developers.png)
 
 ### Api modal map
 
-This is our map api that was put into webpage<br>
+Google map api <br>
 ![mapapi](https://github.com/itsmejustino/NuRoute/blob/99058b8f17f01324f404952eec690544c73ba7a7/assets/mapfeatures.png)
 
 ## Technologies
