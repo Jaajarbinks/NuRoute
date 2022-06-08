@@ -111,3 +111,17 @@ contactSubmit.addEventListener("click", () => {
   localStorage.setItem("name-storage", nameInput.value);
   console.log(localStorage);
 });
+
+
+document.getElementById("justin-github").onclick = function () {
+  window.open("https://github.com/itsmejustino?tab=repositories","_blank");
+};
+document.getElementById("solen-github").onclick = function () {
+  window.open("https://github.com/SolenIyassu","_blank");
+};
+document.getElementById("david-github").onclick = function () {
+  window.open("https://github.com/Jaajarbinks","_blank");
+};
+document.getElementById("eddie-github").onclick = function () {
+  window.open("https://github.com/Eddie-M11","_blank");
+};

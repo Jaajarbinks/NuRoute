@@ -62,3 +62,30 @@ margin-bottom: 50px;
   margin-bottom: 30%;
 
 }
+
+#dev-names{
+  display: flex;
+  flex-direction: column;
+  gap:1em;
+
+}
+
+#justin-github, 
+#solen-github, 
+#david-github, 
+#eddie-github{
+background-color:transparent;
+border:none;
+position:absolute;
+margin-left:1%;
+
+}
+#justin-github:hover,#solen-github:hover,#david-github:hover,#eddie-github:hover{
+cursor:pointer;
+fill:grey;
+}
+
+#justin-svg-color:active,#solen-svg-color:active,#david-svg-color:active,#eddie-svg-color:active{
+fill:grey;
+
+}
