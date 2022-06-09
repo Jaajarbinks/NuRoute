@@ -92,6 +92,7 @@ input:focus::placeholder {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  min-width: 20em;
   margin-top: 150px;
   margin-right:10%;
 margin-left:10%;
