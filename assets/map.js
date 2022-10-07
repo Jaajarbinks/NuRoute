@@ -1,5 +1,4 @@
 //APIS here
-let googleAPIKEY = "AIzaSyDClUF1y_PFdn5iZkZs42H6IfXp2_dAEWI";
 //Map
 ("use strict");
 
@@ -46,7 +45,7 @@ initMap = () => {
       zoomControl: true,
       maxZoom: 22,
     },
-    mapsApiKey: "AIzaSyDClUF1y_PFdn5iZkZs42H6IfXp2_dAEWI",
+    mapsApiKey: "AIzaSyDHdCXgt9IX0UvyUwaCpY2MTZ1VpBTzZqI",
     capabilities: {
       addressAutocompleteControl: true,
       mapDisplayControl: true,
